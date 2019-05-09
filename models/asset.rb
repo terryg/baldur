@@ -2,6 +2,7 @@ class Asset
   include DataMapper::Resource
 
   property :id, Serial
+  property :locator, String
   property :title, String
   property :year, String
   property :media, String

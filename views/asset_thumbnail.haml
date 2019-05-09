@@ -1,12 +1,7 @@
-%div{:class => "asset-thumbnail"}
-  %a{ :href => "/assets/#{asset.id}" }
-    %img{ :width => "300", :src => asset.url_300, :alt => asset.alt_text }
-  %br
-  != asset.title_year_html
-  %br
-  != asset.media
-  %br
-  != asset.dim
-  %br
-  %br
-  %br
+%div{:class => "card asset-thumbnail"}
+  %div{:class => "card-body"}
+    %a{ :href => "/assets/#{asset.id}" }
+      %img{ :style => "card-img",
+	    :width => "300",
+      	    :src => asset.url_300,
+	    :alt => asset.alt_text }

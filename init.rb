@@ -11,7 +11,7 @@ require "aws/s3"
 require "mini_magick"
 
 DataMapper::Logger.new($stdout, :debug)
-DataMapper.setup(:default, (ENV['HEROKU_POSTGRESQL_GOLD_URL'] || "postgres://himself:password@localhost/baldur_development"))
+DataMapper.setup(:default, (ENV['DATABASE_URL'] || ENV['HEROKU_POSTGRESQL_GOLD_URL']))
 
 AWS::S3::Base.establish_connection!(
   :access_key_id => ENV['AWS_ACCESS_KEY_ID'],

@@ -1,9 +1,4 @@
 #wrap
-  #header
-    != partial :header
-  #nav
-  #sidebar
-    != partial :sidebar
   #main
     %div{ :id => "asset-selector" }
       - if "#{@prev_id}" != ""

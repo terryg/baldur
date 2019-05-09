@@ -90,8 +90,8 @@ class App < Sinatra::Base
 
   get "/paintings" do
     @uri = "paintings"
-    @assets = paginate(Asset.all(:deleted => false, :order => [ :weight.asc ]))
-    haml :thumbs
+    @assets = Asset.all(:deleted => false, :order => [ :weight.asc ])
+    haml :thumbs, { :active => 'paintings' }
   end
 
   get "/CV" do

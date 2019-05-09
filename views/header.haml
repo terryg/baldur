@@ -1,3 +1,12 @@
-%a{ :href => "/" }
-  %h1{ :class => "fontface" }
-    Lara Miranda Goodman
+%div{ :class => "navbar" }
+  %div{ :class => "navbar-brand" }
+    %a{ :href => "/", :class => "lmg-brand" }= "LARA MIRANDA GOODMAN"
+
+  %div{ :class => "navbar-menu" }
+    %ul{ :class => "nav" }
+      %li{ :class => "nav-item" }
+        %a{ :href => "/paintings", :class => "nav-link" }= "PAINTINGS"
+      %li{ :class => "nav-item" }
+        %a{ :href => "/CV", :class => "nav-link"  }= "CV"
+      %li{ :class => "nav-item" }
+        %a{ :href => "/contact", :class => "nav-link" }= "CONTACT"
