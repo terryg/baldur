@@ -15,12 +15,6 @@ class App < Sinatra::Base
   
   set :logging, Logger::DEBUG
   
-  before do
-    if request.env['HTTP_HOST'].match(/herokuapp\.com/)
-      redirect 'http://www.laramirandagoodman.com', 301
-    end
-  end
-
   get "/assets/:id" do
     @asset = Asset.get(params[:id].to_i)
     redirect "/assets" if @asset.nil?
