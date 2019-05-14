@@ -43,7 +43,11 @@ class Asset
   end
 
   def short_description_text
-    format('%<title>s. %<height_in>dx%<width_in>d. %<year>s')
+    format('%<title>s. %<height>dx%<width>d. %<year>s',
+           title: title,
+           height: height_in,
+           width: width_in,
+           year: year)
   end
 
   def sold_string
@@ -63,7 +67,7 @@ class Asset
   end
 
   def title_html
-    format('<em>%<title>s</em>')
+    format('<em>%<title>s</em>', title: title)
   end
 
   def text_html
@@ -79,11 +83,11 @@ class Asset
   end
 
   def title_year_html
-    format('<em>%<title>s</em>, %<year>s.')
+    format('<em>%<title>s</em>, %<year>s.', title: title, year: year)
   end
 
   def dim
-    format('%<height_in>d x %<width_in>d inches')
+    format('%<height>d x %<width>d inches', height: height_in, width: width_in)
   end
 
   def width_in
@@ -107,6 +111,6 @@ class Asset
   end
 
   def price_text
-    "$#{format('%.0f', price)}"
+    "$#{format('%<price>.0f', price: price)}"
   end
 end
