@@ -1,14 +1,20 @@
+# frozen_string_literal: true
+
 source 'https://rubygems.org'
+
 ruby '2.5.1'
-gem 'sinatra'
-gem 'data_mapper'
-gem 'pg'
-gem 'dm-postgres-adapter'
-gem 'dm-chunked_query'
+
 gem 'aws-s3'
+gem 'data_mapper'
+gem 'dm-chunked_query'
+gem 'dm-postgres-adapter'
+gem 'foreman'
+gem 'haml'
 gem 'mini_magick'
 gem 'newrelic_rpm'
-gem 'haml'
+gem 'pg'
+gem 'rubocop', '~> 0.69.0', require: false
+gem 'ruby-lint', '~> 2.3'
 gem 'sass'
-gem 'foreman'
+gem 'sinatra'
 gem 'thin'

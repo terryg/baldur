@@ -1,3 +1,6 @@
+# frozen_string_literal: true
+
+# A series is a collection of assets.
 class Series
   include DataMapper::Resource
 
@@ -7,5 +10,3 @@ class Series
 
   has n, :assets
 end
-
-

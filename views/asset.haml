@@ -1,31 +1,5 @@
-#wrap
-  #main
-    %div{ :id => "asset-selector" }
-      - if "#{@prev_id}" != ""
-        %a{ :href => "/assets/#{@prev_id}" }
-          <<
-      - else
-        &nbsp;
-        &nbsp;
-
-      &nbsp;
-      &nbsp;
-
-      - if "#{@next_id}" != ""
-        %a{ :href => "/assets/#{@next_id}" }
-          >>
-      - else
-        &nbsp;
-        &nbsp;
-
-    %div
-      %img{ :width => "500", :src => @asset.url_500, :alt => @asset.alt_text }
-      %br
-      != @asset.text_html
-      %br
-      %br
-      != partial :share_buttons
-    %div
-
-  #footer
-    != partial :footer
+%img{ :class => "hover-shadow",
+      :onclick => "closeModal()",
+      :width => "500",
+      :src => asset.url_500,
+      :alt => asset.alt_text }
