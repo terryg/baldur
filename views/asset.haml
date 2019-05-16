@@ -1,5 +1,4 @@
-%img{ :class => "hover-shadow",
-      :onclick => "closeModal()",
-      :width => "500",
-      :src => asset.url_500,
-      :alt => asset.alt_text }
+%div{ :class => "assets" }
+  %img{ :class => "img-responsive",
+        :src => asset.url,
+        :alt => asset.alt_text }

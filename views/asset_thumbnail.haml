@@ -1,7 +1,4 @@
-%div{:class => "card asset-thumbnail"}
-  %div{:class => "card-body"}
-    %img{ :style => "card-img",
-          :onclick => "openModal();currentSlide(#{asset.id})",
-      	  :width => "300",
-      	  :src => asset.url_300,
-	  :alt => asset.alt_text }
+%div{ :class => "item" }
+  %img{ :onclick => "openModal();currentSlide(#{index})",
+        :src => asset.url_300,
+        :alt => asset.alt_text }

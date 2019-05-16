@@ -47,28 +47,10 @@ class App < Sinatra::Base
     sass :"css/#{params[:stylesheet]}"
   end
 
-  get '/series/:id' do
-    @uri = "series/#{params[:id]}"
-    @name = params[:id].upcase
-    @assets = paginate(Asset.all('series.name' => @name,
-                                 :deleted => false,
-                                 :order => [:weight.asc]))
-    haml :thumbs
-  end
-
-  get '/works/:id' do
-    @uri = "works/#{params[:id]}"
-    @name = params[:id]
-    @assets = paginate(Asset.all(year: @name,
-                                 deleted: false,
-                                 order: [:weight.asc]))
-    haml :thumbs
-  end
-
   get '/paintings' do
     @uri = 'paintings'
     @assets = Asset.all(deleted: false, order: [:weight.asc])
-    haml :thumbs, active: 'paintings'
+    haml :paintings, active: 'paintings'
   end
 
   get '/CV' do
