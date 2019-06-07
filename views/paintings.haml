@@ -9,7 +9,7 @@
   %span{ :class => "close cursor", :onclick => "closeModal()" } &times;
   %div{ :class => "modal-content" }
     - for i in 0..@assets.size-1
-      != partial :asset, :asset => @assets[i]
+      != partial :asset, :asset => @assets[i], :index => i
 
   %a{ :class => "prev", :onclick => "plusSlides(-1)" } &#10094;
   %a{ :class => "next", :onclick => "plusSlides(1)" } &#10095;

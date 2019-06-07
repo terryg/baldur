@@ -8,3 +8,7 @@
 /webrat.log
 /vendor/webrat/vendor
 /public/uploads
+vendor/
+.bundle/
+.sass-cache/
+.env
