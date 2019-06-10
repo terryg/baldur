@@ -5,10 +5,6 @@ require 'logger'
 require 'sass'
 
 require './helpers'
-require './models/asset'
-require './models/series'
-
-DataMapper.finalize
 
 # The app class
 class App < Sinatra::Base
@@ -39,6 +35,7 @@ class App < Sinatra::Base
     @home = '1'
     @full_url = 'http://www.laramirandagoodman.com'
     @series = Series.all(order: :id.desc)
+    @assets = Asset.all(deleted: false)
     haml :home
   end
 
@@ -54,15 +51,18 @@ class App < Sinatra::Base
   end
 
   get '/CV' do
+    @assets = []
     haml :cv
   end
 
   get '/contact' do
+    @assets = []
     @address = 'artist@laramirandagoodman.com'
     haml :contact
   end
 
   get '/upload' do
+    @assets = []
     haml :upload
   end
 
