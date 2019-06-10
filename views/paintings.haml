@@ -1,9 +1,10 @@
 != partial :header, { :active => 'paintings' }
 
 %div{ :class => "container" }
-  %div{ :class => "masonry" }
+  %div{ :class => "row" }
     - for i in 0..@assets.size-1
-      != partial :asset_thumbnail, :asset => @assets[i], :index => i
+      %div{ :class => "column" }
+        != partial :asset_thumbnail, :asset => @assets[i], :index => i
 
 %div{ :id => "lightbox", :class => "modal" }
   %span{ :class => "close cursor", :onclick => "closeModal()" } &times;
@@ -48,5 +49,6 @@
       slides[i].style.display = "none"
     }
     slides[slideIndex - 1].style.display = "block"
+    console.log(slides[slideIndex - 1].alt)
     captionText.innerHtml = slides[slideIndex - 1].alt
   }

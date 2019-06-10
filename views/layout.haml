@@ -9,6 +9,11 @@
     %link{:rel => "stylesheet", :href => "https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css", :integrity => "sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T", :crossorigin => "anonymous"}
     %link{:rel => "stylesheet", :href => "/css/reset.css", :type => "text/css"}/
     %link{:rel => "stylesheet", :href => "/css/main.css", :type => "text/css"}/
+    %link{:rel => "preconnect", :href => "https://s3.amazonaws.com"}
+    - @assets.each do |a|
+      %link{:rel => "prefetch", :href => a.url}
+      %link{:rel => "prefetch", :href => a.url_500}
+      %link{:rel => "prefetch", :href => a.url_300}
   %body
     != yield
     != File.read(File.join('views', 'google_analytics.html'))
