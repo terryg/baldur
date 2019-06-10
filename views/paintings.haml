@@ -3,10 +3,10 @@
 %div{ :class => "container" }
   %div{ :class => "row" }
     %div{ :class => "column" }
-      - for i in 0..(@assets.size/2)-1
+      - for i in 0..(@assets.size/2)
         != partial :asset_thumbnail, :asset => @assets[i], :index => i
     %div{ :class => "column" }
-      - for i in @assets.size/2..@assets.size-1
+      - for i in (@assets.size/2)+1..@assets.size-1
         != partial :asset_thumbnail, :asset => @assets[i], :index => i
 
 %div{ :id => "lightbox", :class => "modal" }
