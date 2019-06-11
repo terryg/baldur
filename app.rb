@@ -50,6 +50,18 @@ class App < Sinatra::Base
     haml :paintings, active: 'paintings'
   end
 
+  get '/paintings/:id' do
+    asset = Asset.get(params[:id])
+    if !asset.nil?
+      @assets = [asset]
+      @uri = asset.title
+      haml :asset, {}, {asset: asset}
+    else
+      halt 400
+    end
+  end
+
+  
   get '/CV' do
     @assets = []
     haml :cv
