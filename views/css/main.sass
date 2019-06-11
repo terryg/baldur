@@ -1,11 +1,9 @@
-$break-small: 320px
-$break-large: 1200px
-
 html
   height: 100%
 
 body
   height: 100%
+  font-family: 'Segoe UI', sans-serif
 
 .bgimg
   background-image: url("https://s3.amazonaws.com/laramirandagoodman-assets/ygcbihdwukvzsuay.jpg")
@@ -59,51 +57,73 @@ body
 .is-right
   float: right
 
+.home-icon
+  color: white
+  font-size: 40px
+  text-decoration: none
+
+.home-icon:hover
+  color: white
+
+.contact-icon
+  color: black
+  font-size: 30px
+  text-decoration: none
+
+.contact-icon:hover
+  color: black
+
 .card
   border: 0px
 
+.header
+  overflow: hidden
+  padding: 40px 30px
+
+.header a
+  float: left
+  color: #666666
+  text-align: center
+  padding: 12px
+  text-decoration: none
+  font-size: 18px
+  line-height: 25px
+  border-radius: 4px
+
+.header a.logo 
+  color: black
+  font-size: 25px
+  font-weight: bold
+
+.header a:hover 
+  color: black
+
+.header a.active 
+  color: black
+
+.header-right 
+  float: right
+
+@media screen and (max-width: 500px)
+  .header a 
+    float: none
+    display: block
+    text-align: left
+  .header-right
+    float: none
+
 .container
   text-align: center
+  padding: 0px 30px
 
-.navbar
-  margin: 20px
-
-.navbar-brand a:link
-  color: #000
-  text-decoration: none
-
-.navbar-brand a:visited
-  color: #000
-  text-decoration: none
-  
-.navbar-brand a:hover
-  color: #000
-  text-decoration: none
-  
-.navbar-brand a:active
-  color: #000
-  text-decoration: none
-
-.nav-item a:link
-  color: #999
-  text-decoration: none
-
-.nav-item a:visited
-  color: #999
-  text-decoration: none
-  
-.nav-item a:hover
-  color: #000
-  text-decoration: none
-  
-.nav-item a:active
-  color: #000
-  text-decoration: none
+.section
+  text-align: left
+  padding: 10px 0px
 
 .row 
   display: flex
   flex-wrap: wrap
-  padding: 0 4px
+  padding: 0px 4px
 
 .column
   flex: 50%
@@ -125,7 +145,7 @@ body
   display: none
   position: fixed
   z-index: 1
-  padding-top: 100px
+  padding-top: 20px
   left: 0
   top: 0
   width: 100%
@@ -134,12 +154,10 @@ body
   background-color: black
 
 .modal-content
-  position: relative
   background-color: #fefefe
-  margin: auto
-  padding: 0
-  width: 90%
-  max-width: 1200px
+  margin: 0px
+  padding: 0px
+  width: 80%
 
 .close
   color: white
@@ -157,7 +175,11 @@ body
   
 .asset
   display: none
-  
+
+.asset img
+  max-width: 90%
+  max-height: 90%
+
 .prev,
 .next
   cursor: pointer

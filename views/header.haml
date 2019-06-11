@@ -1,12 +1,7 @@
-%div{ :class => "navbar" }
-  %div{ :class => "navbar-brand" }
-    %a{ :href => "/", :class => "lmg-brand" }= "LARA MIRANDA GOODMAN"
+%div{ :class => "header" }
+  %a{ :href => "/", :class => "logo" }= "LARA MIRANDA GOODMAN"
 
-  %div{ :class => "navbar-menu" }
-    %ul{ :class => "nav" }
-      %li{ :class => "nav-item" }
-        %a{ :href => "/paintings", :class => "nav-link" }= "PAINTINGS"
-      %li{ :class => "nav-item" }
-        %a{ :href => "/CV", :class => "nav-link"  }= "CV"
-      %li{ :class => "nav-item" }
-        %a{ :href => "/contact", :class => "nav-link" }= "CONTACT"
+  %div{ :class => "header-right" }
+    %a{ :href => "/paintings" }= "PAINTINGS"
+    %a{ :href => "/CV" }= "CV"
+    %a{ :href => "/contact" }= "CONTACT"
