@@ -18,18 +18,17 @@
   %a{ :class => "prev", :onclick => "plusSlides(-1)" } &#10094;
   %a{ :class => "next", :onclick => "plusSlides(1)" } &#10095;
     
-  %div{ :class => "caption-container" }
-    %p{ :id => "caption" }
-
 != partial :footer
 
 :javascript
   function openModal() {
     document.getElementById("lightbox").style.display = "block"
+    document.getElementById("body").style.overflow = "hidden"
   }
 
   function closeModal() {
     document.getElementById("lightbox").style.display = "none"
+    document.getElementById("body").style.overflow = "auto"
   }
 
   let slideIndex = 1
@@ -40,7 +39,7 @@
   }
 
   function currentSlide(n) {
-     showSlides(slideIndex = n)
+    showSlides(slideIndex = n)
   }
 
   function showSlides(n) {
@@ -52,6 +51,4 @@
       slides[i].style.display = "none"
     }
     slides[slideIndex - 1].style.display = "block"
-    console.log(slides[slideIndex - 1].alt)
-    captionText.innerHtml = slides[slideIndex - 1].alt
   }

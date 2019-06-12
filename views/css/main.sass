@@ -5,6 +5,9 @@ body
   height: 100%
   font-family: 'Segoe UI', sans-serif
 
+h4 
+  font-weight: bold
+
 .bgimg
   background-image: url("https://s3.amazonaws.com/laramirandagoodman-assets/ygcbihdwukvzsuay.jpg")
   height: 100%
@@ -51,6 +54,10 @@ body
 .billboard .icon
   color: #fff
 
+@media screen and (max-width: 600px)
+  .billboard .title
+    font-size: 40px    
+
 .button
   cursor: pointer
 
@@ -78,7 +85,7 @@ body
 
 .header
   overflow: hidden
-  padding: 40px 30px
+  padding: 40px 20px
 
 .header a
   float: left
@@ -120,6 +127,9 @@ body
   text-align: left
   padding: 10px 0px
 
+.section p
+  font-family: Georgia, 'Times New Roman', serif  
+
 .row 
   display: flex
   flex-wrap: wrap
@@ -136,7 +146,7 @@ body
   width: 90%
   cursor: pointer
   
-@media screen and (max-width: 1000px)
+@media screen and (max-width: 900px)
   .column
     flex: 100%
     max-width: 100%
@@ -151,15 +161,16 @@ body
   width: 100%
   height: 100%
   overflow: auto
-  background-color: black
+  background-color: rgba(0,0,0,0.95)
 
 .modal-content
-  margin: 0px
-  padding: 0px
+  position: relative
+  text-align: center
 
 .close
   color: white
   position: absolute
+  z-index: 10
   top: 10px
   right: 25px
   font-size: 35px
@@ -172,12 +183,34 @@ body
   text-decoration: none
   
 .asset
-  text-align: center
+  position: relative
   padding-top: 30px
+
+.asset img:hover + div
+  display: block
 
 .asset img
   max-width: 80%
   max-height: 80%
+
+.caption
+  position: absolute
+  bottom: 0px
+  left: 10%
+  width: 80%
+  padding: 20px
+  text-align: right
+  color: white
+  background-color: black
+  opacity: 0.8
+  font-weight: bold
+  display: none
+
+.caption:hover
+  display: block
+
+.caption .title
+  font-size: large
 
 .prev,
 .next
@@ -202,12 +235,6 @@ body
 .prev:hover,
 .next:hover
   background-color: rgba(0, 0, 0, 0.8)
-
-.caption-container
-  text-align: center
-  background-color: black
-  padding: 2px 16px
-  color: white
 
 img.demo
   opacity: 0.6

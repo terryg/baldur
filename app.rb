@@ -47,7 +47,7 @@ class App < Sinatra::Base
   get '/paintings' do
     @uri = 'paintings'
     @assets = Asset.all(deleted: false, order: [:weight.asc])
-    haml :paintings, active: 'paintings'
+    haml :paintings
   end
 
   get '/paintings/:id' do
