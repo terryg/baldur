@@ -141,12 +141,11 @@ h4
   padding: 0 4px
 
 .column img
-  margin-bottom: 64px
-  vertical-align: middle
+  margin-bottom: 56px
   width: 90%
   cursor: pointer
   
-@media screen and (max-width: 1200px)
+@media screen and (max-width: 1000px)
   .column
     flex: 100%
     max-width: 100%
@@ -162,10 +161,13 @@ h4
   height: 100%
   overflow: auto
   background-color: rgba(0,0,0,0.95)
-
+  text-align: center
+  
 .modal-content
   position: relative
   text-align: center
+  vertical-align: middle
+  height: 100%
 
 .close
   color: white
@@ -227,6 +229,9 @@ h4
   border-radius: 0 3px 3px 0
   user-select: none
   -webkit-user-select: none
+
+.prev
+  left: 0
 
 .next
   right: 0
