@@ -1,57 +1,42 @@
-!= partial :header
+!= partial :header, :contact => 'active'
 
-#div{ :class => "container"}
+#div{ :class => "container", :style => "text-align: left"}
   #main
-    %h4 Education
+    %div{ :class => "section" }
+      %h4 Education
     
-    %br
-    2007 Massachusetts College of Art, Boston, MA , M.Ed., Art
-    %br
-    2000 Bard College, Annandale-on-Hudson, NY, B.A. Fine Art
-    %br
-    %br
+      %p 2007 Massachusetts College of Art, Boston, MA , M.Ed., Art
+      %p 2000 Bard College, Annandale-on-Hudson, NY, B.A. Fine Art
 
-    %h4 Additional Course Work
+    %div{ :class => "section" }
+      %h4 Additional Course Work
         
-    %br
-    Art Institute of Florence, School of Museum of Fine Ats, Rhode Island School Design, Kaji Asso Studios, Danforth Museum
-    %br
-    %br
+      %p Art Institute of Florence
+      %p School of Museum of Fine Arts
+      %p Rhode Island School Design
+      %p Kaji Asso Studios
+      %p Danforth Museum
 
-    %h4 Exhibitions
+    %div{ :class => "section" }
+      %h4 Exhibitions
 
-    %br
-    2012 Lydia Pinkham Open Studios, Lynn, MA
-    %br
-    2008 Group Exhibition, <em>Voices, Mothers Who Create</em>, Little Gallery Under the Stairs, Lynn, MA
-    %br
-    2007 Solo Exhibition, <em>Thesis Exhibition</em>, Arnheim Gallery, Boston, MA
-    %br
-    2003 Soon Exhibition, <em>Lara Goodman</em>, West Side Lounge, Cambridge, MA
-    %br
-    2002 Solo Exhibition, <em>For the Love of Paint</em>, St. George Gallery, Boston, MA
-    %br
-    2002 Bradley Street Open Studios, Somerville, MA
-    %br
-    2001 Solo Exhibition, <em>Lara Goodman</em>, The Citizen’s Bank, Cambridge, MA
-    %br
-    2001 Group Exibition, <em>Anniversary Show</em>, Out of the Blue Gallery, Cambridge, MA
-    %br
-    2000 Solo Exhibition, <em>Incidental Discoveries</em>, The Fisher Gallery, Annandale-on-Hudson, NY
-    %br
-    1999 Group Exhibition, <em>aBroad</em>, The Fisher Gallery, Annandale-on-Hudson, NY
-    %br
-    1998 Group Exhibition, <em>I Stranieri</em>, Lorenzo de’Medici Gallery, Florence, Italy
-    %br
-    %br
+      %p 2012 Lydia Pinkham Open Studios, Lynn, MA
+      %p 2008 Group Exhibition, <em>Voices, Mothers Who Create</em>, Little Gallery Under the Stairs, Lynn, MA
+      %p 2007 Solo Exhibition, <em>Thesis Exhibition</em>, Arnheim Gallery, Boston, MA
+      %p 2003 Soon Exhibition, <em>Lara Goodman</em>, West Side Lounge, Cambridge, MA
+      %p 2002 Solo Exhibition, <em>For the Love of Paint</em>, St. George Gallery, Boston, MA
+      %p 2002 Bradley Street Open Studios, Somerville, MA
+      %p 2001 Solo Exhibition, <em>Lara Goodman</em>, The Citizen’s Bank, Cambridge, MA
+      %p 2001 Group Exibition, <em>Anniversary Show</em>, Out of the Blue Gallery, Cambridge, MA
+      %p 2000 Solo Exhibition, <em>Incidental Discoveries</em>, The Fisher Gallery, Annandale-on-Hudson, NY
+      %p 1999 Group Exhibition, <em>aBroad</em>, The Fisher Gallery, Annandale-on-Hudson, NY
+      %p 1998 Group Exhibition, <em>I Stranieri</em>, Lorenzo de’Medici Gallery, Florence, Italy
 
-    %h4 Teaching
+    %div{ :class => "section" }
+      %h4 Teaching
 
-    %br
-    2005-2007 Elementary Art Educator, Marblehead, MA
-    %br  
-    2006 Middle School Art Educator, Buckingham Browne and Nichols, Cambridge, MA
-    %br	 
+      %p 2005-2007 Elementary Art Educator, Marblehead, MA
+      %p 2006 Middle School Art Educator, Buckingham Browne and Nichols, Cambridge, MA	 
 
   #footer
     != partial :footer

@@ -55,7 +55,8 @@ class Asset
   end
 
   def alt_text
-    o = title
+    o = String.new
+    o << title
     o << '. '
     o << dim
     o << '. '
@@ -64,6 +65,7 @@ class Asset
     o << year
     o << '. '
     o << sold_string
+    o
   end
 
   def title_html
@@ -71,7 +73,8 @@ class Asset
   end
 
   def text_html
-    o = title_html
+    o = String.new
+    o << title_html
     o << ', '
     o << year
     o << '. '
@@ -80,6 +83,7 @@ class Asset
     o << dim
     o << '. '
     o << sold_string
+    o
   end
 
   def title_year_html

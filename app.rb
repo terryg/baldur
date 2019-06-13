@@ -5,10 +5,6 @@ require 'logger'
 require 'sass'
 
 require './helpers'
-require './models/asset'
-require './models/series'
-
-DataMapper.finalize
 
 # The app class
 class App < Sinatra::Base
@@ -39,6 +35,7 @@ class App < Sinatra::Base
     @home = '1'
     @full_url = 'http://www.laramirandagoodman.com'
     @series = Series.all(order: :id.desc)
+    @assets = Asset.all(deleted: false)
     haml :home
   end
 
@@ -47,40 +44,37 @@ class App < Sinatra::Base
     sass :"css/#{params[:stylesheet]}"
   end
 
-  get '/series/:id' do
-    @uri = "series/#{params[:id]}"
-    @name = params[:id].upcase
-    @assets = paginate(Asset.all('series.name' => @name,
-                                 :deleted => false,
-                                 :order => [:weight.asc]))
-    haml :thumbs
-  end
-
-  get '/works/:id' do
-    @uri = "works/#{params[:id]}"
-    @name = params[:id]
-    @assets = paginate(Asset.all(year: @name,
-                                 deleted: false,
-                                 order: [:weight.asc]))
-    haml :thumbs
-  end
-
   get '/paintings' do
     @uri = 'paintings'
     @assets = Asset.all(deleted: false, order: [:weight.asc])
-    haml :thumbs, active: 'paintings'
+    haml :paintings
   end
 
+  get '/paintings/:id' do
+    asset = Asset.get(params[:id])
+    if !asset.nil?
+      @assets = [asset]
+      @uri = asset.title
+      haml :asset, {}, {asset: asset}
+    else
+      halt 400
+    end
+  end
+
+  
   get '/CV' do
+    @assets = []
     haml :cv
   end
 
   get '/contact' do
+    @assets = []
     @address = 'artist@laramirandagoodman.com'
     haml :contact
   end
 
   get '/upload' do
+    @assets = []
     haml :upload
   end
 

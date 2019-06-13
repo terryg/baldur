@@ -52,3 +52,31 @@ task :make_assets do
     asset.save
   end
 end
+
+namespace :assets do
+  desc 'All active assets'
+  task :all do
+    Asset.all(deleted: false).each do |a|
+      puts "#{a.id} - #{a.title} - #{a.series.name}"
+    end
+  end
+
+end
+
+namespace :series do
+    desc 'All series'
+    task :all do
+      Series.all().each do |s|
+        puts "#{s.id} - #{s.name}"
+      end
+    end
+end
+
+namespace :settings do
+    desc 'All series'
+    task :all do
+      Settings.all().each do |s|
+        puts "#{s.id} - #{s.name} - #{s.value}"
+      end
+    end
+end

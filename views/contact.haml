@@ -1,17 +1,15 @@
-!= partial :header
+!= partial :header, :contact => 'active'
 
 %div{ :class => "container" }
   #main
 
     %p
-      271 Western Avenue
-      %br
-      Lynn, MA 01904
+      Swampscott, Massachusetts USA
 
     %br
 
     %p
-      <a href="mailto:artist@laramirandagoodman.com">artist<span style="font-family: serif">@</span>laramirandagoodman.com</a>
+      %a{ :href => "mailto:artist@laramirandagoodman.com" }= "artist@laramirandagoodman.com"
 
     %br
 
@@ -21,8 +19,10 @@
     %br
 
     %p
-      <a href="https://www.facebook.com/laramirandagoodman" title="Facebook" target="_blank"><img width="30" height="30" src="/images/facebook-512.png" /></a>
-
+      %a{ :href => "https://www.facebook.com/laramirandagoodman", :class => "fa fa-facebook contact-icon", :target => "_blank"}
+      %span
+        &nbsp;
+      %a{ :href => "https://www.instagram.com/laramirandagoodman", :class => "fa fa-instagram contact-icon", :target => "_blank"}
     
   #footer
     != partial :footer
