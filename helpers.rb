@@ -66,7 +66,8 @@ module Helpers
   #
   # Returns the fkey
   def store_on_s3(tempfile, filename)
-    fkey = poor_random + File.extname(filename)
+    ext = File.extname(filename)
+    fkey = poor_random + ext
 
     AWS::S3::S3Object.store(fkey, tempfile, ENV['S3_BUCKET_NAME'])
 
