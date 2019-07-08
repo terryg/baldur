@@ -98,6 +98,7 @@ class App < Sinatra::Base
       asset.save
     end
 
+    @assets = []
     haml :upload
   end
 end
