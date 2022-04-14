@@ -146,7 +146,7 @@ DEPENDENCIES
   sinatra
 
 RUBY VERSION
-   ruby 2.5.5p157
+   ruby 2.7.4p191
 
 BUNDLED WITH
-   1.17.3
+   2.2.5

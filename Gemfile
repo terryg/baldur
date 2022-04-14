@@ -2,7 +2,7 @@
 
 source 'https://rubygems.org'
 
-ruby '2.5.5'
+ruby '2.7.4'
 
 gem 'aws-s3'
 gem 'data_mapper'
