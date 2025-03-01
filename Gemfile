@@ -2,20 +2,19 @@
 
 source 'https://rubygems.org'
 
-ruby '2.7.4'
+ruby '3.2.3'
 
 gem 'aws-s3'
-gem 'data_mapper'
-gem 'dm-chunked_query'
-gem 'dm-postgres-adapter'
 gem 'foreman'
 gem 'haml'
 gem 'mini_magick'
-gem 'newrelic_rpm'
 gem 'pg'
-gem 'puma'
-gem 'rubocop', '~> 0.69.0', require: false
-gem 'ruby-lint', '~> 2.3'
+gem 'puma', '~> 6.6'
+gem 'rom'
+gem 'rom-sql'
 gem 'sass'
 gem 'sinatra'
-gem 'shotgun'
+
+group :development do
+  gem 'rubocop', '~> 1.25.1'
+end

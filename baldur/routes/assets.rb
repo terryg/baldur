@@ -12,9 +12,7 @@ class Assets < App
 
       @prev_id = assets[index - 1].id if index.positive? && assets[index - 1]
 
-      if (index < assets.size) && assets[index + 1]
-        @next_id = assets[index + 1].id
-      end
+      @next_id = assets[index + 1].id if (index < assets.size) && assets[index + 1]
     end
 
     if params[:edit] == 'on'

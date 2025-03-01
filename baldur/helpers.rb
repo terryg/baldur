@@ -71,8 +71,8 @@ module Helpers
 
     AWS::S3::S3Object.store(fkey, tempfile, ENV['S3_BUCKET_NAME'])
 
-    process(tempfile.path, '300x1000', ext, :s3_300)
-    process(tempfile.path, '500x2000', ext, :s3_500)
+    process(tempfile.path, '300x1000', ext, :s3_w300)
+    process(tempfile.path, '500x2000', ext, :s3_w500)
     process(tempfile.path, '150x1000', ext, :s3_thumb)
 
     fkey

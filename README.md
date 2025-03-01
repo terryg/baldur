@@ -1,16 +1,15 @@
 # Baldur
-======
+
+An image gallery using Sinatra.rb + ROM
+Powered by puma
 
 ## Getting Started
-
-### Install
-
 
 ```
 $ git clone https://github.com/terryg/baldur.git
 $ cd baldur
 $ bundle install --path vendor/bundle
-$ bundle exec foreman run shotgun
+$ bundle exec foreman run puma
 ```
 
 ### Environment Variables
@@ -23,13 +22,9 @@ DATABASE_URL
 RACK_SECRET
 S3_BUCKET_NAME
 
-## Authors
-
-* **Terry Lorber** - *Initial work* - <tgl@rideside.net>
-
 ## License
 
-Copyright 2019 Terry Lorber
+Copyright 2025 Terry Lorber
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 

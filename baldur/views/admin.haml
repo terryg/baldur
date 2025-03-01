@@ -1,16 +1,16 @@
 #wrap
   #header
     != partial :header
-  #nav 
+  #nav
   #sidebar
     %ul{:class=>"menu"}
       %li
         %a{:href=>"/"} HOME
       %li &nbsp;
-      %li      
+      %li
         %a{:href=>"/admin"} ADMIN
       %li &nbsp;
-      %li      
+      %li
         %a{:href=>"/upload"} UPLOAD
   #main
     %form(method="post")
@@ -25,8 +25,8 @@
             - unless @assets[idx*2+1].nil?
               %div{ :class => "thumbs-block" }
                 != partial :admin_asset_thumb, :asset => @assets[idx*2+1]
-      
-      Password: 
+
+      Password:
       %input(type='text' name='password')
       %br
       %input(type='submit' value='Update!')

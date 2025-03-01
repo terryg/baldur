@@ -34,10 +34,10 @@
               - if series.id == @asset.series_id
                 %option{:value => series.id, :selected => true}
                   = series.name
-              - else   
+              - else
                 %option{:value => series.id}
                   = series.name
-          %br     
+          %br
           %label{:for => "sold"} Sold:
           - if @asset.sold
             %input#sold(type="checkbox" name="sold" checked)
@@ -55,7 +55,6 @@
           %br
           %input(type="submit" value="Submit")
     .col-md-3
-  
+
 #footer
   != partial :footer
-

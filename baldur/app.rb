@@ -1,12 +1,8 @@
 # frozen_string_literal: true
 
-require 'sinatra'
-require 'logger'
-require 'sass'
+require './baldur/helpers'
 
-require './helpers'
-
-# The app class
+# A single application
 class App < Sinatra::Base
   use Rack::Session::Cookie, key: 'rack.session', secret: ENV['RACK_SECRET']
   enable :methodoverride
@@ -33,7 +29,7 @@ class App < Sinatra::Base
 
   get '/' do
     @home = '1'
-    @full_url = 'http://www.laramirandagoodman.com'
+    @full_url = 'https://www.laramirandagoodman.com'
     @series = Series.all(order: :id.desc)
     @assets = Asset.all(deleted: false)
     haml :home
@@ -55,13 +51,12 @@ class App < Sinatra::Base
     if !asset.nil?
       @assets = [asset]
       @uri = asset.title
-      haml :asset, {}, {asset: asset}
+      haml :asset, {}, { asset: }
     else
       halt 400
     end
   end
 
-  
   get '/CV' do
     @assets = []
     haml :cv
@@ -102,5 +97,3 @@ class App < Sinatra::Base
     haml :upload
   end
 end
-
-require './routes/assets'

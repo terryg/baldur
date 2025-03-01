@@ -7,40 +7,40 @@
       %li
         %a{:href=>"/"} HOME
       %li &nbsp;
-      %li      
+      %li
         %a{:href=>"/admin"} ADMIN
       %li &nbsp;
-      %li      
+      %li
         %a{:href=>"/upload"} UPLOAD
- 
+
   #main
-    %h1 
+    %h1
       Select file, fill in details, click 'Upload!'
-      %form(method="post" enctype='multipart/form-data')   
-        %input(type='file' name='myfile')    
+      %form(method="post" enctype='multipart/form-data')
+        %input(type='file' name='myfile')
         %br
-        Title: 
+        Title:
         %input(type='text' name='title')
         %br
-        Year: 
+        Year:
         %input(type='text' name='year')
         %br
-        Height (in): 
+        Height (in):
         %input(type='text' name='height')
         %br
-        Width (in): 
-        %input(type='text' name='width') 
+        Width (in):
+        %input(type='text' name='width')
         %br
-        Media: 
+        Media:
         %input(type='text' name='media')
         %br
-        Series: 
+        Series:
         %input(type='text' name='series')
         %br
-        Password: 
+        Password:
         %input(type='text' name='password')
         %br
         %input(type='submit' value='Upload!')
- 
+
   #footer
     != partial :footer

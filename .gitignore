@@ -12,3 +12,5 @@ vendor/
 .bundle/
 .sass-cache/
 .env
+_venv
+assets/

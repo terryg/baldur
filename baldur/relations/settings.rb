@@ -7,5 +7,4 @@ class Settings
   property :id, Serial
   property :name, String
   property :value, String
-
 end
