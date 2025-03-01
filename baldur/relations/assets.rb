@@ -3,19 +3,21 @@
 # An asset represents a single image.
 class Assets < ROM::Relation[:sql]
   schema do
-    attribute :id, Serial
-    attribute :title, String
-    attribute :year, String
-    attribute :media, String
-    attribute :width, Float
-    attribute :height, Float
-    attribute :s3_original, String
-    attribute :s3_thumb, String
-    attribute :s3_w300, String
-    attribute :s3_w500, String
-    attribute :weight, Integer
-    attribute :deleted, Boolean, required: true, default: false
-    attribute :sold, Boolean, required: true, default: false
+    attribute :id, Types::Int
+    attribute :title, Types::String
+    attribute :year, Types::String
+    attribute :media, Types::String
+    attribute :width, Types::Float
+    attribute :height, Types::Float
+    attribute :s3_original, Types::String
+    attribute :s3_thumb, Types::String
+    attribute :s3_w300, Types::String
+    attribute :s3_w500, Types::String
+    attribute :weight, Types::Integer
+    attribute :deleted, Types::Bool, required: true, default: false
+    attribute :sold, Types::Bool, required: true, default: false
+
+    primary_key :id
   end
 
   belongs_to :series
